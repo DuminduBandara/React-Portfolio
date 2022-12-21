@@ -7,6 +7,6 @@ font-family: 'Roboto', sans-serif; */
 @tailwind components;
 @tailwind utilities;
 
-.main-nav a.active{
+.main-nav ul li a.active{
     @apply bg-black text-white
 }
