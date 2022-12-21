@@ -16,7 +16,7 @@ const pageLoaded = {
     }
 }
 
-const Home = () => {
+const Home = ({toggleMode}) => {
 
     return(
         
@@ -44,7 +44,7 @@ const Home = () => {
                         transition: { type: "spring", dumping: 300},
                     }}
                     whileTap={{ scale: 0.9 }}
-                    className="bg-black px-5 py-3 mt-5 w-[200px] font-header text-white text-lg rounded-3xl" 
+                    className="px-5 py-3 mt-5 w-[200px] font-header text-lg rounded-3xl bg-black text-white"
                 >
                     <Link to="/about">Download CV</Link>
                 </motion.button>

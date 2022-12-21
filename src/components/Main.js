@@ -87,15 +87,20 @@ const Navbar = () => {
         setMode(prevMode =>!prevMode);
     }
 
+    const styleLight = {
+        color: "black"
+        .active &{
+            color: 'white',
+            background:'black',
+        }
+    }
 
 
     return ( 
 
+
         <BrowserRouter>
-            <button onClick={toggleMode} className="fixed top-5 left-10 text-3xl z-50">
-                {mode === true? <BsFillSunFill className='text-black'/> : <BsFillMoonFill className='text-white'/>}
-            </button>
-            <div className={`max-w-screen relative px-10 lg:px-20 py-12 ${mode ===true ? 'bg-white' : 'bg-black text-white'}`}>
+            <div className="max-w-screen relative px-10 lg:px-20 py-12">
                 <motion.nav 
                     variants={navAnimation}
                     initial="hidden"
@@ -138,6 +143,14 @@ const Navbar = () => {
                             <NavLink 
                                 to={navLink.path}
                                 className="p-3 rounded-3xl"
+                                style={({ isActive }) =>
+                                    isActive
+                                    ? {
+                                        color: '#fff',
+                                        background: '#000',
+                                    }
+                                    : { color: '#000', background: 'transparent' }
+                                }
                             >{navLink.name}</NavLink>
                         </motion.li>
                        ))}                        
