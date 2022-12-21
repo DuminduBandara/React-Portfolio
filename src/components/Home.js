@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 
 const pageLoaded = {
     hidden: { 
@@ -21,6 +21,7 @@ const pageLoaded = {
 const Home = () => {
 
     return(
+        
         <motion.div
             variants={pageLoaded}
             initial= "hidden"
