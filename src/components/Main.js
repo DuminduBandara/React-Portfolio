@@ -27,7 +27,7 @@ const NavLinkAnimation = {
 const Navbar = () => {
     return ( 
         <BrowserRouter>
-            <div className="w-screen px-20 py-12 bg-white overflow-hidden">
+            <div className="w-screen md:px-10 lg:px-20 py-12 bg-white overflow-hidden">
                 <motion.nav 
                     variants={navAnimation}
                     initial="hidden"
