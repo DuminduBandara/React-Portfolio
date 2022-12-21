@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, NavLink , Link} from "react-router-dom";
 import { FaLinkedinIn, FaGithub, FaFacebookF, FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdClose} from "react-icons/io";
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 // import farmer-motion
 import { motion } from "framer-motion";
@@ -80,19 +81,27 @@ const Navbar = () => {
         setShowNav(prevNav => !prevNav);
     }
 
+    const [mode, setMode] = React.useState(true);
+
+    const toggleMode = () => {
+        setMode(prevMode =>!prevMode);
+    }
 
 
 
     return ( 
 
         <BrowserRouter>
-            <div className="w-screen relative px-10 lg:px-20 py-12 bg-white">
+            <button onClick={toggleMode}>
+                {mode === true? <BsFillSunFill/> : <BsFillMoonFill/>}
+            </button>
+            <div className="max-w-screen relative px-10 lg:px-20 py-12 bg-white">
                 <motion.nav 
                     variants={navAnimation}
                     initial="hidden"
                     animate="visible"
                     className="main-nav w-full flex flex-col md:flex-row justify-around items-center">
-                    <div className="w-[100%] flex justify-between">
+                    <div className="w-[100%] md:w-[20%] flex justify-between">
                         <h1 className="font-header text-3xl">Portfolio.</h1>
                         <div className="inline-block md:hidden">
                             <motion.button 
@@ -106,7 +115,7 @@ const Navbar = () => {
                             </motion.button>
                         </div>
                     </div>
-                    <ul className={showNav === true ? "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center md:visible invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
+                    <ul className={showNav === true ? "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[40%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center md:visible invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
                         
                        {navLinks.map((navLink, i) => (
                         <motion.li
@@ -119,6 +128,11 @@ const Navbar = () => {
                                 duration: 1,
                                 delay: i * 0.1,
                             }}
+                            whileHover={{
+                                scale: 1.2,
+                                transition: { duration: 0.6 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
                             className="my-5 md:my-0"
                         >
                             <NavLink 
