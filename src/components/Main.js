@@ -92,10 +92,10 @@ const Navbar = () => {
     return ( 
 
         <BrowserRouter>
-            <button onClick={toggleMode}>
-                {mode === true? <BsFillSunFill/> : <BsFillMoonFill/>}
+            <button onClick={toggleMode} className="fixed top-5 left-10 text-3xl z-50">
+                {mode === true? <BsFillSunFill className='text-black'/> : <BsFillMoonFill className='text-white'/>}
             </button>
-            <div className="max-w-screen relative px-10 lg:px-20 py-12 bg-white">
+            <div className={`max-w-screen relative px-10 lg:px-20 py-12 ${mode ===true ? 'bg-white' : 'bg-black text-white'}`}>
                 <motion.nav 
                     variants={navAnimation}
                     initial="hidden"
@@ -115,7 +115,7 @@ const Navbar = () => {
                             </motion.button>
                         </div>
                     </div>
-                    <ul className={showNav === true ? "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[40%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center md:visible invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
+                    <ul className={showNav === true ? "md:relative md:h-[100%] top-0 left-0 z-20 w-full md:w-[40%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center md:visible invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
                         
                        {navLinks.map((navLink, i) => (
                         <motion.li
