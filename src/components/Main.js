@@ -1,9 +1,13 @@
+import React from'react';
+import ReactDOM from'react-dom';
+
 // import router
 import { BrowserRouter, Routes, Route, NavLink , Link} from "react-router-dom";
 
 // import icons
-import { FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaFacebookF, FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
+import { IoMdClose} from "react-icons/io";
 
 // import farmer-motion
 import { motion } from "framer-motion";
@@ -70,19 +74,39 @@ const Navbar = () => {
         }
     ]
 
+    const [showNav, setShowNav] = React.useState(false);
+
+    const toggleNav = () => {
+        setShowNav(prevNav => !prevNav);
+    }
+
+
+
+
     return ( 
 
         <BrowserRouter>
-            <div className="w-screen md:px-10 lg:px-20 py-12 bg-white overflow-hidden">
+            <div className="w-screen relative px-10 lg:px-20 py-12 bg-white">
                 <motion.nav 
                     variants={navAnimation}
                     initial="hidden"
                     animate="visible"
-                    className="main-nav w-full flex justify-around items-center">
-                    <div>
+                    className="main-nav w-full flex flex-col md:flex-row justify-around items-center">
+                    <div className="w-[100%] flex justify-between">
                         <h1 className="font-header text-3xl">Portfolio.</h1>
+                        <div className="inline-block md:hidden">
+                            <motion.button 
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { type: 'spring' , stiffness: 50, damping: 20 },
+                                  }}
+                                  whileTap={{ scale: 0.9 }}
+                                className="text-5xl pointer" onClick={toggleNav}>
+                                    {showNav === true ?  <BiMenuAltRight/>: <IoMdClose/>}
+                            </motion.button>
+                        </div>
                     </div>
-                    <ul className="w-[50%] flex justify-between font-header text-sm">
+                    <ul className={showNav === true ? "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
                         
                        {navLinks.map((navLink, i) => (
                         <motion.li
@@ -95,6 +119,7 @@ const Navbar = () => {
                                 duration: 1,
                                 delay: i * 0.1,
                             }}
+                            className="my-5 md:my-0"
                         >
                             <NavLink 
                                 to={navLink.path}
@@ -103,11 +128,8 @@ const Navbar = () => {
                         </motion.li>
                        ))}                        
                     </ul>
-                    <div className="block md:hidden">
-                        <BiMenuAltRight/>
-                    </div>
                 </motion.nav>
-                <Routes>
+                <Routes className="z-10">
                     <Route path="/" element={<Home/>}>Home</Route>
                     <Route path="project" element={<Project/>}>Projects</Route>
                     <Route path="about" element={<About/>}>About</Route>
