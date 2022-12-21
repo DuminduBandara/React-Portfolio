@@ -3,6 +3,8 @@ import { FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Home from "./Home";
 import Project from "./Project";
+import About from "./About";
+import Contact from "./Contact";
 
 const navAnimation = {
     hidden: { 
@@ -12,8 +14,8 @@ const navAnimation = {
         opacity: 1,
         transition: {
             type: "spring",
-            delay: 0.5,
-            duration: 1.5,
+            stiffness: 400,
+            dumping: 30           
         }
     }
 }
@@ -25,7 +27,7 @@ const NavLinkAnimation = {
 const Navbar = () => {
     return ( 
         <BrowserRouter>
-            <div className="w-screen px-20 py-12 bg-white">
+            <div className="w-screen px-20 py-12 bg-white overflow-hidden">
                 <motion.nav 
                     variants={navAnimation}
                     initial="hidden"
@@ -41,7 +43,7 @@ const Navbar = () => {
                                 transition: {type: "spring", stiffness: 300, damping: 20},
                             }}
                         >
-                            <NavLink className="p-3 rounded-3xl" to='/'>Home</NavLink>
+                            <NavLink className="p-3 rounded-3xl" to='/'>home</NavLink>
                         </motion.li>
                         <motion.li
                              whileHover={{
@@ -57,7 +59,7 @@ const Navbar = () => {
                                 transition: {type: "spring", stiffness: 300, damping: 20},
                             }}
                         >
-                            <NavLink className="p-3 rounded-3xl" to='project'>Projects</NavLink>
+                            <NavLink className="p-3 rounded-3xl" to='project'>projects</NavLink>
                         </motion.li>
                         <motion.li
                              whileHover={{
@@ -65,13 +67,15 @@ const Navbar = () => {
                                 transition: {type: "spring", stiffness: 300, damping: 20},
                             }}
                         >
-                            <NavLink className="p-3 rounded-3xl" to='contact'>Contact</NavLink>
+                            <NavLink className="p-3 rounded-3xl" to='contact'>contact</NavLink>
                         </motion.li>
                     </ul>
                 </motion.nav>
                 <Routes>
                     <Route path="/" element={<Home/>}>Home</Route>
                     <Route path="project" element={<Project/>}>Projects</Route>
+                    <Route path="about" element={<About/>}>About</Route>
+                    <Route path="contact" element={<Contact/>}>About</Route>
                 </Routes>
                 <footer>
                     <div className="flex flex-col justify-center items-center py-10">

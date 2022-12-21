@@ -1,5 +1,3 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const pageLoaded = {
@@ -18,18 +16,16 @@ const pageLoaded = {
     }
 }
 
-const Home = () => {
-
-    return(
+const About = () => {
+    return ( 
         <motion.div
             variants={pageLoaded}
             initial= "hidden"
             animate= "visible"
         >
-            <h1>This is the Home</h1>
+            <h1>This is the About</h1>
         </motion.div>
-    );
-
+     );
 }
-
-export default Home;
+ 
+export default About;
