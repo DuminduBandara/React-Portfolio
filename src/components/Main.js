@@ -11,7 +11,7 @@ import { IoMdClose} from "react-icons/io";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 // import farmer-motion
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 // import Components
 import Home from "./Home";
@@ -76,8 +76,23 @@ const Navbar = () => {
     ]
 
     const [showNav, setShowNav] = React.useState(true);
+    const [showNavAnimation, setShowNavAnimation] = React.useState("hide");
+
+    const navAnimation = {
+        show: {
+            height: '700px'
+        },
+        hide: {
+            height: 0
+        }
+    }
 
     const toggleNav = () => {
+        setShowNavAnimation("hide");
+    }
+    
+
+    const togg = () => {
         setShowNav(prevNav => !prevNav);
     }
 
@@ -95,11 +110,61 @@ const Navbar = () => {
         }
     }
 
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001
+    });
+
+    const [position, setPosition] = React.useState({
+        x: -10,
+        y: -10,
+    });
+
+    React.useEffect(()=> {
+        const mousemove = e => {
+            setPosition({
+                x: e.clientX,
+                y: e.clientY,
+
+            })
+        }
+        window.addEventListener("mousemove", mousemove);
+
+        
+        return () => {
+            window.removeEventListener("mousemove", mousemove);
+        }
+
+
+    }, [])
+    
+
+
+    const mousePosition = {
+        default: {
+            x: position.x - 10,
+            y: position.y - 10,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                dumping: 10
+            }
+        }
+    }
+
+
 
     return ( 
 
 
         <BrowserRouter>
+            <motion.div
+                variants={mousePosition}
+                animate="default"
+                className='bg-[#0000006e] h-[32px] w-[32px] rounded-full fixed top-0'></motion.div>
+            <motion.div className="bg-black fixed top-0 left-0 right-0 h-[5px] origin-[0%] z-[200]" style={{ scaleX }} />
             <div className="max-w-screen relative px-10 lg:px-20 py-12">
                 <motion.nav 
                     variants={navAnimation}
@@ -120,7 +185,8 @@ const Navbar = () => {
                             </motion.button>
                         </div>
                     </div>
-                    <ul className={showNav === true ? "md:relative md:h-[100%] top-0 left-0 z-20 w-full md:w-[40%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center md:visible invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
+                    <motion.ul 
+                        className={showNav === true ? "md:relative md:h-[100%] top-0 left-0 z-20 w-full md:w-[40%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center md:visible invisible h-0" : "md:relative bg-white md:h-[100%] top-0 left-0 z-20 w-full md:w-[50%] flex flex-col md:flex-row md:justify-between justify-center font-header text-sm text-center visible"}>
                         
                        {navLinks.map((navLink, i) => (
                         <motion.li
@@ -154,7 +220,7 @@ const Navbar = () => {
                             >{navLink.name}</NavLink>
                         </motion.li>
                        ))}                        
-                    </ul>
+                    </motion.ul>
                 </motion.nav>
                 <Routes className="z-10">
                     <Route path="/" element={<Home/>}>Home</Route>

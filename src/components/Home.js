@@ -4,19 +4,21 @@ import { motion, AnimatePresence} from "framer-motion";
 
 const pageLoaded = {
     hidden: { 
-        opacity: 0, 
+        scale: 0, 
+        opacity: 0,
     },
     visible: {
+        scale: 1, 
         opacity: 1,
         transition: {
             type: "spring",
-            stiffness: 50,
+            stiffness: 40,
             dumping: 20           
         }
     }
 }
 
-const Home = ({toggleMode}) => {
+const Home = () => {
 
     return(
         
@@ -36,7 +38,7 @@ const Home = ({toggleMode}) => {
                     className="w-[220px] h-[220px] overflow-hidden rounded-full drop-shadow-2xl">
                     <img src={process.env.PUBLIC_URL + '/images/user.png'}  className="w-full"/>
                 </motion.div>
-                <h1 className="mt-5 font-header text-4xl">Dumindu Lakshan</h1>
+                <h1 className="mt-5 mb-1 font-header text-4xl">Dumindu Lakshan</h1>
                 <h3 className="font-header text-lg font-[300]">Undergraduate.</h3>
                 <motion.button
                     whileHover={{
