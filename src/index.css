@@ -8,5 +8,5 @@ font-family: 'Roboto', sans-serif; */
 @tailwind utilities;
 
 .main-nav ul li a.active{
-    @apply bg-black text-white
+    @apply bg-black text-white;
 }

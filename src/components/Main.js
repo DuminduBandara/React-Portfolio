@@ -1,10 +1,20 @@
+// import router
 import { BrowserRouter, Routes, Route, NavLink , Link} from "react-router-dom";
+
+// import icons
 import { FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa";
+import { BiMenuAltRight } from "react-icons/bi";
+
+// import farmer-motion
 import { motion } from "framer-motion";
+
+// import Components
 import Home from "./Home";
 import Project from "./Project";
 import About from "./About";
 import Contact from "./Contact";
+// import NavLinks from './components/NavData';
+
 
 const navAnimation = {
     hidden: { 
@@ -20,12 +30,48 @@ const navAnimation = {
     }
 }
 
-const NavLinkAnimation = {
-
+const navLinkAnimation = {
+    init: {
+        opacity: 0,
+        translateY:-100
+    },
+    animate: {
+        opacity: 1,
+        translateY: 0,
+    }
 }
 
 const Navbar = () => {
+
+    const navLinks = [
+        {
+            id: 1,
+            name: "home",
+            path: "/",
+            element: <Home />
+        },
+        {
+            id: 2,
+            name: "about",
+            path: "about",
+            element: <About/>
+        },
+        {
+            id: 3,
+            name: "projects",
+            path: "project",
+            element: <Project/>
+        },
+        {
+            id: 4,
+            name: "contact",
+            path: "contact",
+            element: <Contact/>
+        }
+    ]
+
     return ( 
+
         <BrowserRouter>
             <div className="w-screen md:px-10 lg:px-20 py-12 bg-white overflow-hidden">
                 <motion.nav 
@@ -36,40 +82,30 @@ const Navbar = () => {
                     <div>
                         <h1 className="font-header text-3xl">Portfolio.</h1>
                     </div>
-                    <ul className="w-[50%] flex justify-between font-header text-sm ">
+                    <ul className="w-[50%] flex justify-between font-header text-sm">
+                        
+                       {navLinks.map((navLink, i) => (
                         <motion.li
-                             whileHover={{
-                                y: -10,
-                                transition: {type: "spring", stiffness: 300, damping: 20},
+                            key={navLink.id}
+                            variants={navLinkAnimation}
+                            initial="init"
+                            animate="animate"
+                            transition={{
+                                type: "spring",
+                                duration: 1,
+                                delay: i * 0.1,
                             }}
                         >
-                            <NavLink className="p-3 rounded-3xl" to='/'>home</NavLink>
+                            <NavLink 
+                                to={navLink.path}
+                                className="p-3 rounded-3xl"
+                            >{navLink.name}</NavLink>
                         </motion.li>
-                        <motion.li
-                             whileHover={{
-                                y: -10,
-                                transition: {type: "spring", stiffness: 300, damping: 20},
-                            }}
-                        >
-                            <NavLink className="p-3 rounded-3xl" to='about'>about</NavLink>
-                        </motion.li>
-                        <motion.li
-                             whileHover={{
-                                y: -10,
-                                transition: {type: "spring", stiffness: 300, damping: 20},
-                            }}
-                        >
-                            <NavLink className="p-3 rounded-3xl" to='project'>projects</NavLink>
-                        </motion.li>
-                        <motion.li
-                             whileHover={{
-                                y: -10,
-                                transition: {type: "spring", stiffness: 300, damping: 20},
-                            }}
-                        >
-                            <NavLink className="p-3 rounded-3xl" to='contact'>contact</NavLink>
-                        </motion.li>
+                       ))}                        
                     </ul>
+                    <div className="block md:hidden">
+                        <BiMenuAltRight/>
+                    </div>
                 </motion.nav>
                 <Routes>
                     <Route path="/" element={<Home/>}>Home</Route>
