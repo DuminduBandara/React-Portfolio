@@ -74,7 +74,7 @@ const Navbar = () => {
         }
     ]
 
-    const [showNav, setShowNav] = React.useState(false);
+    const [showNav, setShowNav] = React.useState(true);
 
     const toggleNav = () => {
         setShowNav(prevNav => !prevNav);
