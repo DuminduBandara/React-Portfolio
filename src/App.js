@@ -1,4 +1,5 @@
 import Home from './components/Home';
+import Main from './components/Main';
 
 function App() {
 
@@ -6,8 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React</h1>
-      <Home/>
+      <Main/>
     </div>
   );
 }
