@@ -60,7 +60,7 @@ const Skill = () => {
             initial= "hidden"
             animate= "visible"
         >   
-            <img src={process.env.PUBLIC_URL + "images/logo/c.png"}  className="w-[100%] " />
+            <img src={process.env.PUBLIC_URL + "images/user.png"}  className="w-[100%] " />
 
             <motion.div 
                 initial={{
