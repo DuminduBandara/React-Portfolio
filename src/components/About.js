@@ -42,7 +42,8 @@ const About = () => {
                 }}
                 transition={{
                     type: "spring",
-                    stiffness: 200,
+                    stiffness: 100,
+                    dumping:50
                 }}
                 className="my-6">
                 <h1 className="text-[#0000005b] text-[3.5rem] md:text-[5rem] lg:text-[13rem] text-center font-header">About Me.</h1>
