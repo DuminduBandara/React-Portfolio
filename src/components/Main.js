@@ -76,23 +76,9 @@ const Navbar = () => {
     ]
 
     const [showNav, setShowNav] = React.useState(true);
-    const [showNavAnimation, setShowNavAnimation] = React.useState("hide");
-
-    const navAnimation = {
-        show: {
-            height: '700px'
-        },
-        hide: {
-            height: 0
-        }
-    }
-
-    const toggleNav = () => {
-        setShowNavAnimation("hide");
-    }
     
 
-    const togg = () => {
+    const toggleNav = () => {
         setShowNav(prevNav => !prevNav);
     }
 
