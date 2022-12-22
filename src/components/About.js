@@ -1,6 +1,7 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink, Link } from "react-router-dom";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { BiRightArrowCircle } from "react-icons/bi";
@@ -21,6 +22,8 @@ const pageLoaded = {
 }
 
 const About = () => {
+
+
     return ( 
         <motion.div
             variants={pageLoaded}
@@ -28,18 +31,45 @@ const About = () => {
             animate= "visible"
         >
 
-            <div className="my-6">
+            <motion.div 
+                initial={{
+                    opacity: 0,
+                    y: 300
+                }}
+                animate= {{
+                    opacity: 1,
+                    y: 0,
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 200,
+                }}
+                className="my-6">
                 <h1 className="text-[#0000005b] text-[3.5rem] md:text-[5rem] lg:text-[13rem] text-center font-header">About Me.</h1>
-            </div>  
-            <div className="grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 grid-rows-7 lg:grid-rows-3 gap-10 lg:gap-20">
-                <div className="lg:col-span-2  lg:h-[50vh] overflow-hidden rounded-3xl drop-shadow-lg">
-                    <img src={process.env.PUBLIC_URL + '/images/me.jpg'}  className="w-full h-full contain"/>
+            </motion.div>  
+            <motion.div 
+                initial={{
+                    opacity: 0,
+                    viewTarget: "hidden"
+                }}
+                animate= {{
+                    opacity: 1,
+                    visibility: "visible"
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    delay: 1
+                }}
+                className="grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 grid-rows-7 lg:grid-rows-3 gap-10 lg:gap-20">
+                <div className="lg:col-span-2  overflow-hidden rounded-3xl drop-shadow-lg">
+                    <img src={process.env.PUBLIC_URL + '/images/me.jpg'}  className="w-full contain"/>
                 </div>
                 <div className="p-[20px] flex flex-col justify-center rounded-3xl drop-shadow-lg bg-white">
                     <h2 className="sm:text-2xl md:text-4xl lg:text-5xl text-center font-header">I'm Dumindu Lakshan</h2>
                     <h4 className="text-3xl font-option text-[#000000af] mt-2 text-center">Undergraduate.</h4>
                 </div>
-                <div className="px-[40px] flex flex-col justify-center text-left lg:ol-span-2 p-5 rounded-3xl drop-shadow-lg bg-white">
+                <div className="px-[40px] flex flex-col justify-center text-left lg:col-span-2 p-5 rounded-3xl drop-shadow-lg bg-white">
                     <h3 className="text-3xl font-header mb-5">About me</h3>
                     <p className="text-lg font-body leading-7 font-semibold space-x-2">I’m a Undergraduate at Sri Lanka Institute Of Information Technology(SLIIT), and specializing in web design, illustration and visual development. I have worked in multidisciplinary fields, in both large and small companies, startups and as a freelancer.</p>
                 </div>
@@ -59,7 +89,7 @@ const About = () => {
                     href="https://www.creative-tim.com/presentation" 
                     className="relative flex justify-center items-center font-header text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
                     <HiOutlineDocumentDownload className=""/>
-                    <span className="hidden md:block">Download CV</span>
+                    <span className="hidden md:block" >Download CV</span>
                     <BiRightArrowCircle className="absolute right-10 bottom-5 text-5xl"/>
                 </motion.a>
                 
@@ -93,7 +123,7 @@ const About = () => {
                         <BiRightArrowCircle className="absolute right-10 bottom-5 text-5xl"/>
                     </motion.button>
                 </Link>
-            </div>
+            </motion.div>
         </motion.div>
      );
 }
