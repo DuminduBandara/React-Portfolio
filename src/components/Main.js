@@ -18,7 +18,7 @@ import Home from "./Home";
 import Project from "./Project";
 import About from "./About";
 import Contact from "./Contact";
-// import NavLinks from './components/NavData';
+import Skill from "./Skill";
 
 
 const navAnimation = {
@@ -53,25 +53,26 @@ const Navbar = () => {
             id: 1,
             name: "home",
             path: "/",
-            element: <Home />
         },
         {
             id: 2,
             name: "about",
             path: "about",
-            element: <About/>
         },
         {
             id: 3,
             name: "projects",
             path: "project",
-            element: <Project/>
         },
         {
             id: 4,
+            name: "skills",
+            path: "skill",
+        },
+        {
+            id: 5,
             name: "contact",
             path: "contact",
-            element: <Contact/>
         }
     ]
 
@@ -140,6 +141,12 @@ const Navbar = () => {
         }
     }
 
+    const [process, setProcess] = React.useState(60);
+    
+    // setProcess(prev => 60);
+
+    
+
 
 
     return ( 
@@ -194,12 +201,12 @@ const Navbar = () => {
                         >
                             <NavLink 
                                 to={navLink.path}
-                                className="p-3 rounded-3xl"
+                                className="p-2"
                                 style={({ isActive }) =>
                                     isActive
                                     ? {
-                                        color: '#fff',
-                                        background: '#000',
+                                        borderBottom: '3px solid #000',
+                                        // background: '#000',
                                     }
                                     : { color: '#000', background: 'transparent' }
                                 }
@@ -209,10 +216,11 @@ const Navbar = () => {
                     </motion.ul>
                 </motion.nav>
                 <Routes className="z-10">
-                    <Route path="/" element={<Home/>}>Home</Route>
-                    <Route path="project" element={<Project/>}>Projects</Route>
-                    <Route path="about" element={<About/>}>About</Route>
-                    <Route path="contact" element={<Contact/>}>About</Route>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/project" element={<Project/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/skill" element={<Skill/>}/>
                 </Routes>
                 <footer>
                     <div className="flex flex-col justify-center items-center py-10">
