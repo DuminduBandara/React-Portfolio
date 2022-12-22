@@ -12,7 +12,7 @@ const pageLoaded = {
         opacity: 1,
         transition: {
             type: "spring",
-            stiffness: 40,
+            stiffness: 20,
             dumping: 20           
         }
     }

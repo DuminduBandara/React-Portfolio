@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         header: ['Poppins'],
-        body: ['Roboto'],
+        body: ['Montserrat'],
+        option: ['Roboto']
       }
     },
   },
