@@ -17,6 +17,17 @@ const pageLoaded = {
     }
 }
 
+const logoAnimation = {
+    init: {
+        opacity: 0,
+        translateY:100
+    },
+    animate: {
+        opacity: 1,
+        translateY: 0,
+    }
+}
+
 
 const Skill = () => {
 
@@ -60,8 +71,6 @@ const Skill = () => {
             initial= "hidden"
             animate= "visible"
         >   
-            <img src={process.env.PUBLIC_URL + "images/user.png"}  className="w-[100%] " />
-
             <motion.div 
                 initial={{
                     opacity: 0,
@@ -79,38 +88,46 @@ const Skill = () => {
                 className="my-6">
                 <h1 className="text-[#0000005b] text-[3.5rem] md:text-[5rem] lg:text-[13rem] text-center font-header">Skills.</h1>
             </motion.div>
-            <motion.div 
-                initial={{
-                    opacity: 0,
-                    viewTarget: "hidden"
-                }}
-                animate= {{
-                    opacity: 1,
-                    visibility: "visible"
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 100,
-                    delay: 1
-                }}
+            <div 
                 className="max-w-screen">
                 <h1 className='font-header text-3xl pb-2 lg:text-left text-center'>Technical Skills</h1>
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:mb-10 mb-20">
-                    {logosOne.map((logo) =>(
-                        <div className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
+                    {logosOne.map((logo, i) =>(
+                        <motion.div 
+                            key={logo.id}
+                            variants={logoAnimation}
+                            initial="init"
+                            animate="animate"
+                            transition={{
+                                type: "spring",
+                                duration: 1,
+                                delay: i * 0.1,
+                            }}
+                            className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
                             <img src={`${process.env.PUBLIC_URL}/${logo.path}`} alt={logo.id} className="w-[100%] " />
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <h1 className='font-header text-3xl pb-2 lg:text-left text-center'>Tools</h1>
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {logosTwo.map((logo) =>(
-                        <div className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
+                <motion.div 
+                    className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                    {logosTwo.map((logo, i) =>(
+                        <motion.div
+                            key={logo.id}
+                            variants={logoAnimation}
+                            initial="init"
+                            animate="animate"
+                            transition={{
+                                type: "spring",
+                                duration: 1,
+                                delay: i * 0.1,
+                            }}
+                            className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
                             <img src={`${process.env.PUBLIC_URL}/${logo.path}`} alt={logo.id} className="w-[100%] " />
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
             
         </motion.div>
     );
