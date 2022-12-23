@@ -88,13 +88,13 @@ const About = () => {
                     }}
                     whileTap={{ scale: 0.9 }}
                     href="https://www.creative-tim.com/presentation" 
-                    className="relative flex justify-center items-center font-header text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
+                    className="h-[200px] relative flex justify-center items-center font-header text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
                     <HiOutlineDocumentDownload className=""/>
                     <span className="hidden md:block" >Download CV</span>
                     <BiRightArrowCircle className="absolute right-10 bottom-5 text-5xl"/>
                 </motion.a>
                 
-                <Link to="/contact" className="relative flex justify-center font-header items-center text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
+                <Link to="/contact" className="h-[200px] relative flex justify-center font-header items-center text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
                     <motion.button
                         whileHover={{
                             color: '#000000af',
@@ -109,7 +109,7 @@ const About = () => {
                         <BiRightArrowCircle className="absolute right-10 bottom-5 text-5xl"/>
                     </motion.button>
                 </Link>
-                <Link to="/project" className="relative flex justify-center items-center font-header text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
+                <Link to="/project" className="h-[200px] relative flex justify-center items-center font-header text-center p-5 rounded-3xl drop-shadow-lg bg-white text-3xl">
                     <motion.button
                         whileHover={{
                             color: '#000000af',
