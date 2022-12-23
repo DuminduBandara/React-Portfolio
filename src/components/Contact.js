@@ -1,6 +1,8 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import { MdAlternateEmail, MdPhoneAndroid } from "react-icons/md";
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort, BsCheckCircle } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 
 const pageLoaded = {
@@ -19,6 +21,13 @@ const pageLoaded = {
 
 
 const Contact = () => {
+
+    const [send, setSend] = React.useState(false);
+
+    const toggleSend = () => {
+        setSend(prevSend => !prevSend);
+    }
+
     return ( 
         <motion.div
             variants={pageLoaded}
@@ -94,7 +103,9 @@ const Contact = () => {
                         dumping:50,
                     }}
                     className="lg:col-span-2 drop-shadow-lg bg-white rounded-lg p-8">
+                    {send == false ?
                     <form action="https://formsubmit.co/lakshand969@gmail.com" method="POST">
+                        <input type="hidden" name="_next" value="http://localhost:3000/contact"/>
                         <div className="mb-5">
                             <motion.label 
                                 whileHover={{
@@ -136,12 +147,30 @@ const Contact = () => {
                             <motion.button 
                                 whileHover={{
                                     translateX: 15,
-                                    transition: { type: "spring", dumping: 300},
+                                    transition: { type: "spring", stiffness:800, dumping: 80},
                                 }}
                                 className="my-4 px-7 py-3 bg-black text-white rounded-xl" type="submit">
-                                Send</motion.button>
+                            Send</motion.button>
                         </div>
                     </form>
+                    :
+                    <div className='h-[200px] flex flex-col justify-around items-center'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <BsCheckCircle className='text-6xl mb-3'/>
+                            <h1 className='text-3xl'>Thank you..!</h1>
+                        </div>
+                        <div>
+                            <motion.button 
+                                whileHover={{
+                                    translateX: -15,
+                                    transition: { type: "spring", stiffness: 600, dumping: 80},
+                                }}
+                                className="my-4 px-7 py-3 bg-black text-white rounded-xl" type="submit">
+                                <NavLink to="/">Back To Home</NavLink>
+                            </motion.button>
+                        </div>
+                    </div>
+                    }       
                 </motion.div>
             </div>
         </motion.div>
