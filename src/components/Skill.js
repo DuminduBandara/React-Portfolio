@@ -106,7 +106,7 @@ const Skill = () => {
                                 delay: i * 0.1,
                             }}
                             className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
-                            <img src={`${process.env.PUBLIC_URL}/${logo.path}`} alt={logo.id} className="w-[100%] " />
+                            <img src={logo.path} alt={logo.id} className="w-[100%] " />
                         </motion.div>
                     ))}
                 </div>
@@ -125,7 +125,7 @@ const Skill = () => {
                                 delay: i * 0.1,
                             }}
                             className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
-                            <img src={`${process.env.PUBLIC_URL}/${logo.path}`} alt={logo.id} className="w-[100%] " />
+                            <img src={logo.path} alt={logo.id} className="w-[100%] " />
                         </motion.div>
                     ))}
                 </motion.div>
