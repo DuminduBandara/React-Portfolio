@@ -32,37 +32,36 @@ const logoAnimation = {
 const Skill = () => {
 
     const logosOne = [
-        {id:1, path:"images/logo/html.png"},
-        {id:2, path:"images/logo/css.png"},
-        {id:3, path:"images/logo/js.png"},
-        {id:4, path:"images/logo/react.jpg"},
-        {id:5, path:"images/logo/nextjs.png"},
-        {id:6, path:"images/logo/redux.png"},
-        {id:7, path:"images/logo/node.png"},
-        {id:8, path:"images/logo/sql.png"},
-        {id:9, path:"images/logo/tailwind.png"},
+        {id:1, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/html.png?raw=true"},
+        {id:2, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/css.png?raw=true"},
+        {id:3, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/js.png?raw=true"},
+        {id:4, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/react.jpg?raw=true"},
+        {id:5, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/nextjs.png?raw=true"},
+        {id:6, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/redux.png?raw=true"},
+        {id:7, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/node.png?raw=true"},
+        {id:8, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/sql.png?raw=true"},
+        {id:9, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/tailwind.png?raw=true"},
         {id:10, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/bootstrap.png?raw=true"},
-        {id:11, path:"images/logo/npm.png"},
-        {id:12, path:"images/logo/java.png"},
-        {id:13, path:"images/logo/c++.png"},
-        {id:14, path:"images/logo/c.png"},
-        {id:15, path:"images/logo/motion.webp"},
-        {id:16, path:"images/logo/php.png"},
+        {id:11, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/npm.png?raw=true"},
+        {id:12, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/java.png?raw=true"},
+        {id:13, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/c++.png?raw=true"},
+        {id:14, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/c.png?raw=true"},
+        {id:15, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/main/public/images/Logo/motion.webp"},
+        {id:16, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/php.png?raw=true"},
     ]
 
     const logosTwo = [
-        {id:1, path:"images/logo/vscode.svg"},
-        {id:2, path:"images/logo/sublime.svg"},
-        {id:3, path:"images/logo/github.svg"},
-        {id:4, path:"images/logo/intellij.svg"},
-        {id:5, path:"images/logo/vscode.svg"},
-        {id:6, path:"images/logo/git.png"},
-        {id:7, path:"images/logo/eclipse.svg"},
-        {id:8, path:"images/logo/canva.svg"},
-        {id:9, path:"images/logo/mockFlow.webp"},
-        {id:8, path:"images/logo/cloud.png"},
-        {id:8, path:"images/logo/netlify.svg"},
-        {id:9, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/atom.jpg?raw=true"},
+        {id:1, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/vsCode.svg"},
+        {id:2, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/sublime.svg"},
+        {id:3, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/github.svg"},
+        {id:4, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/intellij.svg"},
+        {id:5, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/git.png?raw=true"},
+        {id:6, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/eclipse.svg"},
+        {id:7, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/canva.svg"},
+        {id:8, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/main/public/images/Logo/mockFlow.webp"},
+        {id:9, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/cloud.png?raw=true"},
+        {id:10, path:"https://raw.githubusercontent.com/lakshan969Github/React-Portfolio/9359bd20176abab0a352650f79cb228e35c0778e/public/images/Logo/netlify.svg"},
+        {id:11, path:"https://github.com/lakshan969Github/React-Portfolio/blob/main/public/images/Logo/atom.jpg?raw=true"},
     ]
 
 
@@ -103,7 +102,7 @@ const Skill = () => {
                             transition={{
                                 type: "spring",
                                 duration: 1,
-                                delay: i * 0.1,
+                                delay: i * 0.3,
                             }}
                             className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
                             <img src={logo.path} alt={logo.id} className="w-[100%] " />
@@ -122,7 +121,7 @@ const Skill = () => {
                             transition={{
                                 type: "spring",
                                 duration: 1,
-                                delay: i * 0.1,
+                                delay: i * 0.4,
                             }}
                             className="overflow-hidden bg-white drop-shadow-lg rounded-lg flex items-center p-5">
                             <img src={logo.path} alt={logo.id} className="w-[100%] " />
