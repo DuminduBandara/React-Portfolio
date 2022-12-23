@@ -1,4 +1,5 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 import { motion } from "framer-motion";
 import { MdAlternateEmail, MdPhoneAndroid } from "react-icons/md";
 import { BsArrowRightShort, BsCheckCircle } from "react-icons/bs";
@@ -27,6 +28,18 @@ const Contact = () => {
     const toggleSend = () => {
         setSend(prevSend => !prevSend);
     }
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_9m790x3', 'template_xaynfcq', e.target, 'jZ2NDbnd__co-toij')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+          e.target.reset();
+    };
 
     return ( 
         <motion.div
@@ -77,6 +90,7 @@ const Contact = () => {
                             <MdAlternateEmail className="text-xl"/>
                             <span className="ml-1">lakshand969@gmail.com</span>
                         </motion.li>
+
                         <motion.li 
                             whileHover={{
                                 translateX: 15,
@@ -104,8 +118,7 @@ const Contact = () => {
                     }}
                     className="lg:col-span-2 drop-shadow-lg bg-white rounded-lg p-8">
                     {send == false ?
-                    <form action="https://formsubmit.co/lakshand969@gmail.com" method="POST">
-                        <input type="hidden" name="_next" value="http://localhost:3000/contact"/>
+                    <form onSubmit={sendEmail}>
                         <div className="mb-5">
                             <motion.label 
                                 whileHover={{
@@ -117,6 +130,19 @@ const Contact = () => {
                                 <BsArrowRightShort className="text-2xl"/>
                             </motion.label>
                             <input className="bg-gray-200 py-3 px-4 mt-2 w-full rounded-xl placeholder:text-gray-600" type="email" name="email" placeholder="Enter your email" required/>
+                        </div>
+                        <div className="mb-5">
+                            <motion.label
+                                whileHover={{
+                                    translateX: 15,
+                                    transition: { type: "spring", dumping: 300},
+                                }}
+                                htmlFor="name" className="flex text-lg items-center">
+                                <span>Subject</span>
+                                <BsArrowRightShort
+                                    className="text-2xl"/>
+                            </motion.label>
+                            <input className="bg-gray-200 py-3 px-4 mt-2 w-full rounded-xl placeholder:text-gray-600" type="text" name="subject"  placeholder="Enter your subject" required/>
                         </div>
                         <div className="mb-5">
                             <motion.label
