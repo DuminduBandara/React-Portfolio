@@ -55,7 +55,7 @@ const Project = () => {
             id: 3,
             name: "Portfolio",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/portfolio.png?raw=true",
             siteLink: "https://e63a9ce5.react-portfolio-27w.pages.dev/",
             codeLink: "https://github.com/lakshan969Github/React-Portfolio.git",
             tech: [
@@ -68,7 +68,7 @@ const Project = () => {
             id: 4,
             name: "Restaurant Website",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/restaurant.png?raw=true",
             siteLink: "https://food-rest.netlify.app/",
             codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
             tech: [
