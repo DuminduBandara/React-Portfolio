@@ -93,7 +93,7 @@ const Project = () => {
             id: 5,
             name: "Game",
             break: "",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/hunter.png?raw=true",
             siteLink: "https://food-rest.netlify.app/",
             codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
             tech: [
@@ -108,8 +108,8 @@ const Project = () => {
             id: 6,
             name: "Online Banking System",
             break: "",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
-            siteLink: "https://food-rest.netlify.app/",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/onlineBank.png?raw=true",
+            siteLink: "https://lakshand969phpproject.000webhostapp.com/html/home.html",
             codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
             tech: [
                 {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
