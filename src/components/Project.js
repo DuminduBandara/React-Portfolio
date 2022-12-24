@@ -4,6 +4,7 @@ import { FaReact, FaBootstrap, FaCss3, FaPhp } from "react-icons/fa";
 import { BsBootstrapFill} from "react-icons/bs";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
+import { BiCodeAlt } from "react-icons/bi";
 
 
 const pageLoaded = {
@@ -26,8 +27,10 @@ const Project = () => {
         {
             id: 1,
             name: "Weather App",
+            break: "fully responsive",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
-            link: "https://345deb31.react-weather-app-b39.pages.dev/",
+            siteLink: "https://345deb31.react-weather-app-b39.pages.dev/",
+            codeLink: "https://github.com/lakshan969Github/React-Weather-App.git",
             tech: [
                 {tName: "React JS", icon: <FaReact className="text-2xl"/>},
                 {tName: "Bootstrap", icon: <FaBootstrap className="text-2xl"/>},
@@ -39,7 +42,8 @@ const Project = () => {
             id: 2,
             name: "Notepad App",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
-            link: "https://3c55ca37.react-notepad-app.pages.dev",
+            siteLink: "https://3c55ca37.react-notepad-app.pages.dev",
+            codeLink: "https://github.com/lakshan969Github/React-Notepad-App.git",
             tech: [
                 { tName: "React JS", icon: <FaReact className="text-2xl"/>},
                 { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
@@ -50,11 +54,25 @@ const Project = () => {
             id: 3,
             name: "Portfolio",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
-            link: "https://e63a9ce5.react-portfolio-27w.pages.dev/",
+            siteLink: "https://e63a9ce5.react-portfolio-27w.pages.dev/",
+            codeLink: "https://github.com/lakshan969Github/React-Portfolio.git",
             tech: [
                 { tName: "React JS", icon: <FaReact className="text-2xl"/>},
                 { tName: "Tailwind CSS", icon: <SiTailwindcss className="text-2xl"/>},
                 { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
+            ]
+        },
+        {
+            id: 4,
+            name: "Restaurant Website",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            siteLink: "https://food-rest.netlify.app/",
+            codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
+            tech: [
+                {tName: "Bootstrap", icon: <FaBootstrap className="text-2xl"/>},
+                {tName: "Java Script", icon: <TbBrandJavascript className="text-2xl"/>},
+                { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
+                { tName: "CSS", icon: <FaCss3 className="text-2xl"/>}
             ]
         },
     ]
@@ -92,11 +110,14 @@ const Project = () => {
 
                 {projects.map((project, i) => (
                     <div className="flex flex-col drop-shadow-lg bg-white relative rounded-xl overflow-hidden">
-                        <div className="max-h-[300px] overflow-hidden">
-                            <img src={project.image} style={styles}/>
+                        <div className="max-h-[300px] overflow-hidden p-3 md:p-6">
+                            <img src={project.image} style={styles} className="rounded-xl"/>
                         </div>
-                        <div className="p-6 font-header">
-                            <h1 className="text-3xl">{project.name}</h1>
+                        <div className="px-6 py-3 font-header">
+                            <div className="flex items-center">
+                                <h1 className="text-3xl mr-2">{project.name}</h1>
+                                <span className="text-gray-700 text-sm">{project.break}*</span>
+                            </div>
                             <h2 className="text-xl mt-3 mb-2">Technologies</h2>
                             <ul>
                                 {project.tech.map((tech, j) => (
@@ -107,22 +128,39 @@ const Project = () => {
                                 ))}
                             </ul>
                         </div>
-                        <motion.a
-                            
-                            animate={{ 
-                                x: -20
-                            }}
-                            transition={{ 
-                                repeat: Infinity, 
-                                type: 'spring', 
-                                stiffness: 600,
-                                dumping: 100,
-                                duration: 3
-                            }}
-                            href="https://345deb31.react-weather-app-b39.pages.dev" target="_blank" className="absolute right-5 bottom-10 flex items-center text-[1.1rem] font-header">
-                            <span>View Live</span>
-                            <AiOutlineFullscreen className="text-xl ml-2"/>
-                        </motion.a>
+                        <div className="absolute  right-8 bottom-10 md:bottom-10 flex flex-col w-auto text-[1.1rem] font-header">
+                            <motion.a                                
+                                animate={{ 
+                                    x: -10
+                                }}
+                                transition={{ 
+                                    repeat: Infinity, 
+                                    type: 'spring', 
+                                    stiffness: 600,
+                                    dumping: 100,
+                                    duration: 3
+                                }}
+                                href={project.codeLink} target="_blank" className="flex items-center mb-5 mb:mb-0">
+                                <BiCodeAlt className="text-2xl md:text-xl ml-2"/>
+                                <span className="hidden md:block">Source Code</span>
+                            </motion.a>
+                            <motion.a                                
+                                animate={{ 
+                                    x: -10
+                                }}
+                                transition={{ 
+                                    repeat: Infinity, 
+                                    type: 'spring', 
+                                    stiffness: 600,
+                                    dumping: 100,
+                                    duration: 3.3
+                                }}
+                                href={project.siteLink} target="_blank" className="flex items-center">
+                                <AiOutlineFullscreen className="text-2xl md:text-xl ml-2"/>
+                                <span className="hidden md:block">View Live</span>
+                            </motion.a>
+
+                        </div>
                     </div>
                 ))}
             </div>
