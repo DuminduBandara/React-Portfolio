@@ -21,6 +21,17 @@ const pageLoaded = {
     }
 }
 
+const projectAnimation = {
+    init: {
+        opacity: 0,
+        translateY:100
+    },
+    animate: {
+        opacity: 1,
+        translateY: 0,
+    }
+}
+
 const Project = () => {
 
     const projects = [
@@ -143,8 +154,18 @@ const Project = () => {
             <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-10">
 
                 {projects.map((project, i) => (
-                    <div className="flex flex-col drop-shadow-lg bg-white relative rounded-xl overflow-hidden">
-                        <div className="max-h-[300px] overflow-hidden p-3 md:p-6">
+                    <motion.div 
+                        key={project.id}
+                        variants={projectAnimation}
+                        initial="init"
+                        animate="animate"
+                        transition={{
+                            type: "spring",
+                            duration: 1,
+                            delay: i * 0.3,
+                        }}
+                        className="flex flex-col drop-shadow-lg bg-white relative rounded-xl overflow-hidden">
+                        <div className="max-h-[300px] overflow-hidden p-3 md:p-6 drop-shadow-lg">
                             <img src={project.image} style={styles} className="rounded-xl"/>
                         </div>
                         <div className="px-6 py-3 font-header">
@@ -195,7 +216,7 @@ const Project = () => {
                             </motion.a>
 
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </motion.div>
