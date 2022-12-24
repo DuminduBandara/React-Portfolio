@@ -42,7 +42,7 @@ const Project = () => {
             id: 2,
             name: "Notepad App",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/notepad.PNG?raw=true",
             siteLink: "https://3c55ca37.react-notepad-app.pages.dev",
             codeLink: "https://github.com/lakshan969Github/React-Notepad-App.git",
             tech: [
