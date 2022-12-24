@@ -27,7 +27,7 @@ const Project = () => {
         {
             id: 1,
             name: "Weather App",
-            break: "fully responsive",
+            break: "fully responsive*",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
             siteLink: "https://345deb31.react-weather-app-b39.pages.dev/",
             codeLink: "https://github.com/lakshan969Github/React-Weather-App.git",
@@ -41,6 +41,7 @@ const Project = () => {
         {
             id: 2,
             name: "Notepad App",
+            break: "fully responsive*",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
             siteLink: "https://3c55ca37.react-notepad-app.pages.dev",
             codeLink: "https://github.com/lakshan969Github/React-Notepad-App.git",
@@ -53,6 +54,7 @@ const Project = () => {
         {
             id: 3,
             name: "Portfolio",
+            break: "fully responsive*",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
             siteLink: "https://e63a9ce5.react-portfolio-27w.pages.dev/",
             codeLink: "https://github.com/lakshan969Github/React-Portfolio.git",
@@ -65,6 +67,7 @@ const Project = () => {
         {
             id: 4,
             name: "Restaurant Website",
+            break: "fully responsive*",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
             siteLink: "https://food-rest.netlify.app/",
             codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
@@ -75,6 +78,37 @@ const Project = () => {
                 { tName: "CSS", icon: <FaCss3 className="text-2xl"/>}
             ]
         },
+        {
+            id: 5,
+            name: "Game",
+            break: "",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            siteLink: "https://food-rest.netlify.app/",
+            codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
+            tech: [
+                {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
+                {tName: "Mysql", icon: <SiMysql className="text-2xl"/>},
+                {tName: "Java Script", icon: <TbBrandJavascript className="text-2xl"/>},
+                { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
+                { tName: "CSS", icon: <FaCss3 className="text-2xl"/>}
+            ]
+        },
+        {
+            id: 6,
+            name: "Online Banking System",
+            break: "",
+            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            siteLink: "https://food-rest.netlify.app/",
+            codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
+            tech: [
+                {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
+                {tName: "Mysql", icon: <SiMysql className="text-2xl"/>},
+                {tName: "Java Script", icon: <TbBrandJavascript className="text-2xl"/>},
+                { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
+                { tName: "CSS", icon: <FaCss3 className="text-2xl"/>}
+            ]
+        },
+
     ]
 
     const styles = {
@@ -116,7 +150,7 @@ const Project = () => {
                         <div className="px-6 py-3 font-header">
                             <div className="flex items-center">
                                 <h1 className="text-3xl mr-2">{project.name}</h1>
-                                <span className="text-gray-700 text-sm">{project.break}*</span>
+                                <span className="text-gray-700 text-sm">{project.break}</span>
                             </div>
                             <h2 className="text-xl mt-3 mb-2">Technologies</h2>
                             <ul>
