@@ -95,7 +95,7 @@ const Project = () => {
             break: "",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/hunter.png?raw=true",
             siteLink: "https://food-rest.netlify.app/",
-            codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
+            codeLink: "https://github.com/lakshan969Github/CFT-Challenge.git",
             tech: [
                 {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
                 {tName: "Mysql", icon: <SiMysql className="text-2xl"/>},
@@ -110,7 +110,7 @@ const Project = () => {
             break: "",
             image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/onlineBank.png?raw=true",
             siteLink: "https://lakshand969phpproject.000webhostapp.com/html/home.html",
-            codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
+            codeLink: "https://github.com/lakshan969Github/Online-Banking-System.git",
             tech: [
                 {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
                 {tName: "Mysql", icon: <SiMysql className="text-2xl"/>},
