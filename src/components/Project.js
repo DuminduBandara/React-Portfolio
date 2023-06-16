@@ -5,6 +5,21 @@ import { BsBootstrapFill} from "react-icons/bs";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
 import { BiCodeAlt } from "react-icons/bi";
+import { FaNodeJs } from 'react-icons/fa';
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+
+
+import i1 from "../assets/projects/NTMS.png"
+import i2 from "../assets/projects/ecom.png"
+import i3 from "../assets/projects/dash.png"
+import i4 from "../assets/projects/weatherApp.png"
+import i5 from "../assets/projects/notepad.png"
+import i6 from "../assets/projects/portfolio.png"
+import i7 from "../assets/projects/restaurant.png"
+import i8 from "../assets/projects/hunter.png"
+import i9 from "../assets/projects/onlineBank.png"
+
 
 
 const pageLoaded = {
@@ -37,49 +52,87 @@ const Project = () => {
     const projects = [
         {
             id: 1,
+            name: "Network towers management system",
+            break: "",
+            image: i1,
+            siteLink: null,
+            codeLink: "https://github.com/lakshan969Github/Network-Towers-Management-System.git",
+            tech: [
+                {tName: "React JS", icon: <FaReact className="text-2xl"/>},
+                {tName: "Node JS", icon: <FaNodeJs className="text-2xl"/>},
+                {tName: "Express", icon: <SiExpress className="text-2xl"/>},
+                {tName: "Mongo DB", icon: <SiMongodb className="text-2xl"/>},
+            ]
+        },
+        {
+            id: 2,
+            name: "Ecommerce App",
+            break: "",
+            image: i2,
+            siteLink: null,
+            codeLink: "https://github.com/lakshan969Github/Mern-EcommerceSite.git",
+            tech: [
+                {tName: "React JS", icon: <FaReact className="text-2xl"/>},
+                {tName: "Node JS", icon: <FaNodeJs className="text-2xl"/>},
+                {tName: "Express", icon: <SiExpress className="text-2xl"/>},
+                {tName: "Mongo DB", icon: <SiMongodb className="text-2xl"/>},
+            ]
+        },
+        {
+            id: 3,
+            name: "Admin Dashboard",
+            break: "",
+            image: i3,
+            siteLink: null,
+            codeLink: "https://github.com/lakshan969Github/Mern-admin-borad.git",
+            tech: [
+                {tName: "React JS", icon: <FaReact className="text-2xl"/>},
+                {tName: "Node JS", icon: <FaNodeJs className="text-2xl"/>},
+                {tName: "Express", icon: <SiExpress className="text-2xl"/>},
+                {tName: "Mongo DB", icon: <SiMongodb className="text-2xl"/>},
+            ]
+        },
+        {
+            id: 4,
             name: "Weather App",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/weatherApp.PNG?raw=true",
+            image: i4,
             siteLink: "https://345deb31.react-weather-app-b39.pages.dev/",
             codeLink: "https://github.com/lakshan969Github/React-Weather-App.git",
             tech: [
                 {tName: "React JS", icon: <FaReact className="text-2xl"/>},
                 {tName: "Bootstrap", icon: <FaBootstrap className="text-2xl"/>},
-                { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
-                { tName: "CSS", icon: <FaCss3 className="text-2xl"/>}
             ]
         },
         {
-            id: 2,
+            id: 5,
             name: "Notepad App",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/notepad.PNG?raw=true",
+            image: i5,
             siteLink: "https://3c55ca37.react-notepad-app.pages.dev",
             codeLink: "https://github.com/lakshan969Github/React-Notepad-App.git",
             tech: [
                 { tName: "React JS", icon: <FaReact className="text-2xl"/>},
-                { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
                 { tName: "CSS", icon: <FaCss3 className="text-2xl"/>}
             ]
         },
         {
-            id: 3,
+            id: 6,
             name: "Portfolio",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/portfolio.png?raw=true",
+            image: i6,
             siteLink: "https://e63a9ce5.react-portfolio-27w.pages.dev/",
             codeLink: "https://github.com/lakshan969Github/React-Portfolio.git",
             tech: [
                 { tName: "React JS", icon: <FaReact className="text-2xl"/>},
                 { tName: "Tailwind CSS", icon: <SiTailwindcss className="text-2xl"/>},
-                { tName: "HTML", icon: <AiFillHtml5 className="text-2xl"/>},
             ]
         },
         {
-            id: 4,
+            id: 7,
             name: "Restaurant Website",
             break: "fully responsive*",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/restaurant.png?raw=true",
+            image: i7,
             siteLink: "https://food-rest.netlify.app/",
             codeLink: "https://github.com/lakshan969Github/Bootstrap-FoodOrdering-Site.git",
             tech: [
@@ -90,11 +143,11 @@ const Project = () => {
             ]
         },
         {
-            id: 5,
-            name: "Game",
+            id: 8,
+            name: "Capture Flag Project",
             break: "",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/hunter.png?raw=true",
-            siteLink: "https://food-rest.netlify.app/",
+            image: i8,
+            siteLink: null,
             codeLink: "https://github.com/lakshan969Github/CFT-Challenge.git",
             tech: [
                 {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
@@ -105,11 +158,11 @@ const Project = () => {
             ]
         },
         {
-            id: 6,
+            id: 9,
             name: "Online Banking System",
             break: "",
-            image: "https://github.com/lakshan969Github/React-Portfolio/blob/temp/public/images/Projects/onlineBank.png?raw=true",
-            siteLink: "https://lakshand969phpproject.000webhostapp.com/html/home.html",
+            image: i9,
+            siteLink: null,
             codeLink: "https://github.com/lakshan969Github/Online-Banking-System.git",
             tech: [
                 {tName: "PHP", icon: <FaPhp className="text-2xl"/>},
@@ -199,7 +252,8 @@ const Project = () => {
                                 <BiCodeAlt className="text-2xl md:text-xl ml-2"/>
                                 <span className="hidden md:block">Source Code</span>
                             </motion.a>
-                            <motion.a                                
+                            {project.siteLink !== null &&
+                                <motion.a                                
                                 animate={{ 
                                     x: -10
                                 }}
@@ -213,7 +267,8 @@ const Project = () => {
                                 href={project.siteLink} target="_blank" className="flex items-center">
                                 <AiOutlineFullscreen className="text-2xl md:text-xl ml-2"/>
                                 <span className="hidden md:block">View Live</span>
-                            </motion.a>
+                                </motion.a>
+                            }
 
                         </div>
                     </motion.div>

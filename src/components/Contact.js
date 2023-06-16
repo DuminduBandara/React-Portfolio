@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { MdAlternateEmail, MdPhoneAndroid } from "react-icons/md";
 import { BsArrowRightShort, BsCheckCircle } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
+import { BsLinkedin } from "react-icons/bs";
+import { GrLocation } from "react-icons/gr";
+import { BsGithub } from "react-icons/bs";
 
 
 const pageLoaded = {
@@ -79,14 +82,14 @@ const Contact = () => {
                         stiffness: 60,
                         dumping:50,
                     }}
-                    className="bg-white drop-shadow-lg rounded-lg p-8 max-h-[150px]">
+                    className="bg-white drop-shadow-lg rounded-lg p-8 max-h-[200px]">
                     <ul>
                         <motion.li 
                             whileHover={{
                                 translateX: 15,
                                 transition: { type: "spring", dumping: 300},
                             }}
-                            className="flex items-center text-lg mb-2 cursor-pointer">
+                            className="flex items-center text-lg mb-2">
                             <MdAlternateEmail className="text-xl"/>
                             <span className="ml-1">lakshand969@gmail.com</span>
                         </motion.li>
@@ -96,10 +99,31 @@ const Contact = () => {
                                 translateX: 15,
                                 transition: { type: "spring", dumping: 300},
                             }}
-                            className="flex items-center text-lg cursor-pointer">
+                            className="flex items-center text-lg mb-2 cursor-pointer">
                             <MdPhoneAndroid className="text-xl"/>
-                            <span className="ml-1">+94 716816224</span>
+                            <span className="ml-1">+94 71 681 6224</span>
                         </motion.li>
+
+                        <motion.li 
+                            whileHover={{
+                                translateX: 15,
+                                transition: { type: "spring", dumping: 300},
+                            }}
+                            className="flex items-center text-lg mb-2 cursor-pointer">
+                            <BsGithub className="text-xl"/>
+                            <a href='https://github.com/lakshan969Github' target='_blank' className="ml-1">GitHub(lakshan969Github)</a>
+                        </motion.li>
+
+                        <motion.li 
+                            whileHover={{
+                                translateX: 15,
+                                transition: { type: "spring", dumping: 300},
+                            }}
+                            className="flex items-center text-lg mb-2 cursor-pointer">
+                            <BsLinkedin className="text-xl"/>
+                            <a href='https://www.linkedin.com/in/dumindu-bandara-76b459267?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bt1Rbg6QrRXaMckQc0GXIMg%3D%3D' target='_blank' className="ml-1">LinkedIn(Dumindu Bandara)</a>
+                        </motion.li>
+
                     </ul>
                 </motion.div>
                 <motion.div 

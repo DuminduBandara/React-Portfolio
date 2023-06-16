@@ -224,20 +224,15 @@ const Navbar = () => {
                 </Routes>
                 <footer>
                     <div className="flex flex-col justify-center items-center py-10">
-                        <ul className="w-[200px] flex justify-between">
+                        <ul className="w-[100px] flex justify-between">
                             <li>
-                                <a href="https://lk.linkedin.com/" target="_blank">
+                                <a href="https://www.linkedin.com/in/dumindu-bandara-76b459267?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bt1Rbg6QrRXaMckQc0GXIMg%3D%3D" target="_blank">
                                     <FaLinkedinIn className="text-2xl"/>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/" target="_blank">
+                                <a href="https://github.com/lakshan969Github" target="_blank">
                                     <FaGithub className="text-2xl"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://web.facebook.com/" target="_blank">
-                                    <FaFacebookF className="text-2xl"/>
                                 </a>
                             </li>
                         </ul>
