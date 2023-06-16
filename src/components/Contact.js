@@ -65,7 +65,7 @@ const Contact = () => {
                     dumping:50
                 }}
                 className="my-6">
-                <h1 className="text-[#0000005b] text-[3.4rem] md:text-[5rem] lg:text-[12rem] text-center font-header">Contact Me.</h1>
+                <h1 className="text-[#0000005b] text-[3.2rem] md:text-[5rem] lg:text-[12rem] text-center font-header">Contact Me.</h1>
             </motion.div>
             <div className="font-header grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 grid-rows-1 lg:grid-rows-1 gap-10">
                 <motion.div
