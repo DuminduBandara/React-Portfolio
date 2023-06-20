@@ -95,14 +95,7 @@ const About = () => {
         <div className="px-[40px] flex flex-col justify-center text-left lg:col-span-3 p-5 rounded-3xl drop-shadow-lg bg-white mb-12">
           <h3 className="text-3xl font-header mb-5">About me</h3>
           <p className="text-lg font-body leading-7 font-semibold space-x-2">
-            Motivated and determined 3rd-year undergraduate with a strong focus
-            on Information Technology at SLIIT. Proactive and flexible, I
-            actively seek out opportunities for personal and professional
-            development. With a collaborative mindset and a can-do attitude, I
-            consistently strive for optimal outcomes. Currently seeking an
-            internship to further enrich my expertise and competencies in the IT
-            domain, I am excited to leverage this experience as a launching pad
-            for a successful career in the industry
+            Hello, I'm Dumindu Lakshan Bandara, currently pursuing a BSc(Hons) in Information Technology specializing in Information Technology at SLIIT, Malabe. As an ambitious individual, I am always striving to improve and grow. My approach towards work is honest and I value teamwork, ensuring that everyone's opinions are heard. I take a thoughtful approach to implementing programs, carefully considering their effectiveness. I am committed to achieving my goals in a timely and accurate manner and strive to maintain a positive outlook in all situations.
           </p>
         </div>
         <div className="px-[40px] flex flex-col justify-center text-left p-5 rounded-3xl drop-shadow-lg bg-white mb-12">
