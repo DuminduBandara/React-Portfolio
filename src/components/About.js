@@ -69,7 +69,7 @@ const About = () => {
             className="px-5 py-3 mt-5 w-[200px] font-header text-lg rounded-3xl bg-black text-white"
           >
             <a
-              href="https://drive.google.com/file/d/1ELny4cvUuKJjbMA-7TZOiayK-oUqokxA/view?usp=sharing"
+              href="https://drive.google.com/file/d/1-jnY_jGQ799dXqNqN2vtJErnjHpM7fDW/view?usp=sharing"
               target="_blank"
             >
               Download CV
