@@ -15,7 +15,6 @@ import i2 from "../assets/projects/ecom.png"
 import i3 from "../assets/projects/dash.png"
 import i4 from "../assets/projects/weatherApp.png"
 import i5 from "../assets/projects/notepad.png"
-import i6 from "../assets/projects/portfolio.png"
 import i7 from "../assets/projects/restaurant.png"
 import i8 from "../assets/projects/hunter.png"
 import i9 from "../assets/projects/onlineBank.png"
@@ -120,7 +119,7 @@ const Project = () => {
             id: 6,
             name: "Portfolio",
             break: "fully responsive*",
-            image: i6,
+            image: i3,
             siteLink: "https://e63a9ce5.react-portfolio-27w.pages.dev/",
             codeLink: "https://github.com/lakshan969Github/React-Portfolio.git",
             tech: [
